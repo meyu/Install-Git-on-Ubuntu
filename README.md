@@ -30,7 +30,7 @@ DONE.
 補充說明
 =
 * 未選擇從 Git 網站下載最新版本，而使用 aptitude 來安裝的原因在，能把 Git 所需的相關套件一併安裝 (如：libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev build-essential... 等)。
-* 更新時，需使用 Make 工具，請先行安裝：<code>sudo aptitude install make</code> 
+* 更新時，需使用 Make 及 cURL 工具，請先行安裝：<code>sudo aptitude install make</code> 
 
 參考資源
 =
