@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Install-git-on-ubuntu : 於 Ubuntu 上安裝 Git" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Install-git-on-ubuntu</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/meyu/Install-Git-on-Ubuntu">View on GitHub</a>
+
+          <h1 id="project_title">Install-git-on-ubuntu</h1>
+          <h2 id="project_tagline">於 Ubuntu 上安裝 Git</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/meyu/Install-Git-on-Ubuntu/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/meyu/Install-Git-on-Ubuntu/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="%E6%89%80%E7%82%BA%E4%BD%95%E4%BE%86" class="anchor" href="#%E6%89%80%E7%82%BA%E4%BD%95%E4%BE%86"><span class="octicon octicon-link"></span></a>所為何來</h1>
+
+<p>於 Ubuntu 上安裝 Git 版本管理系統，並方便使用 Git 之資源。</p>
+
+<h1>
+<a name="%E4%BD%BF%E7%94%A8%E7%92%B0%E5%A2%83" class="anchor" href="#%E4%BD%BF%E7%94%A8%E7%92%B0%E5%A2%83"><span class="octicon octicon-link"></span></a>使用環境</h1>
+
+<p>Ubuntu 12.04 Server<br>
+Git 1.8.3.4</p>
+
+<h1>
+<a name="%E6%8E%A8%E8%96%A6%E5%AE%89%E8%A3%9D%E6%96%B9%E5%BC%8F" class="anchor" href="#%E6%8E%A8%E8%96%A6%E5%AE%89%E8%A3%9D%E6%96%B9%E5%BC%8F"><span class="octicon octicon-link"></span></a>推薦安裝方式</h1>
+
+<p>於終端機中，先輸入以下指令，以安裝 Git 所需的相關套件：</p>
+
+<div class="highlight"><pre>sudo aptitude install libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev build-essential
+</pre></div>
+
+<p>接著，輸入以下指令，以將 Git 下載並安裝：<br>
+(Git 的版本可至 <a href="https://www.digitalocean.com/community/articles/how-to-install-git-on-ubuntu-12-04">Git 官網</a> 查看與選擇，本文以 1.8.3.4 做為示範)</p>
+
+<div class="highlight"><pre>wget https://git-core.googlecode.com/files/git-1.8.3.4.tar.gz <span class="o">&amp;&amp;</span> 
+tar -zxf git-1.8.3.4.tar.gz <span class="o">&amp;&amp;</span> mv git-1.8.3.4 git <span class="o">&amp;&amp;</span> <span class="nb">cd </span>git <span class="o">&amp;&amp;</span> 
+make <span class="nv">prefix</span><span class="o">=</span>/usr/local all <span class="o">&amp;&amp;</span> sudo make <span class="nv">prefix</span><span class="o">=</span>/usr/local install <span class="o">&amp;&amp;</span> 
+<span class="nb">cd</span> <span class="o">&amp;&amp;</span> rm -rf git git-1.8.3.4.tar.gz
+</pre></div>
+
+<p>最後，請設定帳號名稱及 Email：<br>
+(本文以 git.user 做為帳號、git＠email.com 做為 Email)</p>
+
+<pre lang="git"><code>git config --global user.name "git.user" &amp;&amp; 
+git config --global user.email git@email.com
+</code></pre>
+
+<p>欲修改時，請再次輸入以上帳號或 Email 之指令，即可覆蓋原設定。  </p>
+
+<p>DONE.
+<br><br></p>
+
+<h1>
+<a name="%E8%A3%9C%E5%85%85%E8%AA%AA%E6%98%8E" class="anchor" href="#%E8%A3%9C%E5%85%85%E8%AA%AA%E6%98%8E"><span class="octicon octicon-link"></span></a>補充說明</h1>
+
+<p>日後需更新 Git 時，可使用 Git 的指令來進行：</p>
+
+<div class="highlight"><pre>git clone git://git.kernel.org/pub/scm/git/git.git <span class="o">&amp;&amp;</span> 
+<span class="nb">cd </span>git <span class="o">&amp;&amp;</span> make <span class="nv">prefix</span><span class="o">=</span>/usr/local all <span class="o">&amp;&amp;</span> sudo make <span class="nv">prefix</span><span class="o">=</span>/usr/local install <span class="o">&amp;&amp;</span>
+<span class="nb">cd</span> <span class="o">&amp;&amp;</span> rm -rf git
+</pre></div>
+
+<p>欲查看帳號及 Email 設定時，可輸入：</p>
+
+<pre lang="git"><code>git config --list
+</code></pre>
+
+<p>若要直接編輯的話，可使用：</p>
+
+<div class="highlight"><pre>sudo nano ~/.gitconfig
+</pre></div>
+
+<h1>
+<a name="%E5%8F%83%E8%80%83%E8%B3%87%E6%BA%90" class="anchor" href="#%E5%8F%83%E8%80%83%E8%B3%87%E6%BA%90"><span class="octicon octicon-link"></span></a>參考資源</h1>
+
+<ul>
+<li><a href="http://git-scm.com/download/linux">Git</a></li>
+<li><a href="https://www.digitalocean.com/community/articles/how-to-install-git-on-ubuntu-12-04">How to Install Git on Ubuntu 12.04 | DigitalOcean</a></li>
+<li><a href="https://help.ubuntu.com/community/Git">Git - Community Ubuntu Documentation</a></li>
+<li><a href="https://code.google.com/p/git-core/downloads/list">Downloads - git-core - Git - the stupid content tracker - Google Project Hosting</a></li>
+</ul>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Install-git-on-ubuntu maintained by <a href="https://github.com/meyu">meyu</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
