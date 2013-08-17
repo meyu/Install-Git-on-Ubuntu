@@ -6,31 +6,50 @@
 使用環境
 =
 Ubuntu 12.04 Server  
-Git 1.7.9.5
+Git 1.8.3.4
 
 
 推薦安裝方式
 =
-於終端機中，輸入以下指令來安裝 Git：
+於終端機中，先輸入以下指令，以安裝 Git 所需的相關套件：
 ```bash
-sudo aptitude install git-core &&
+sudo aptitude install libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev build-essential
 ```
-接著，請使用更新 Git 來更新自己：
+接著，輸入以下指令，以將 Git 下載並安裝：  
+(Git 的版本可至 [Git 官網](https://www.digitalocean.com/community/articles/how-to-install-git-on-ubuntu-12-04) 查看與選擇，本文以 1.8.3.4 做為示範)
 ```bash
-git clone https://github.com/git/git && 
-cd git
-make prefix=/usr/local all && 
-sudo make prefix=/usr/local install
-
+wget https://git-core.googlecode.com/files/git-1.8.3.4.tar.gz && 
+tar -zxf git-1.8.3.4.tar.gz && mv git-1.8.3.4 git && cd git && 
+make prefix=/usr/local all && sudo make prefix=/usr/local install && 
+cd && rm -rf git git-1.8.3.4.tar.gz
 ```
+最後，請設定帳號名稱及 Email：  
+(本文以 git.user 做為帳號、git＠email.com 做為 Email)
+```git
+git config --global user.name "git.user" && 
+git config --global user.email git@email.com
+```
+欲修改時，請再次輸入以上帳號或 Email 之指令，即可覆蓋原設定。  
 DONE.
 <br>
 <br>
 
 補充說明
 =
-* 未選擇從 Git 網站下載最新版本，而使用 aptitude 來安裝的原因在，能把 Git 所需的相關套件一併安裝 (如：libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev build-essential... 等)。
-* 更新時，需使用 Make 及 cURL 工具，請先行安裝：<code>sudo aptitude install make</code> 
+日後需更新 Git 時，可使用 Git 的指令來進行：
+```bash
+git clone git://git.kernel.org/pub/scm/git/git.git && 
+cd git && make prefix=/usr/local all && sudo make prefix=/usr/local install &&
+cd && rm -rf git
+```
+欲查看帳號及 Email 設定時，可輸入：
+```git
+git config --list
+```
+若要直接編輯的話，可使用：
+```bash
+sudo nano ~/.gitconfig
+```
 
 參考資源
 =
