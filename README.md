@@ -1,6 +1,6 @@
 所為何來
 =
-於 Ubuntu 上安裝 Git 命令列工具，以便使用 git 指令來下載套件，或運作分散式的版本管理系統。
+於 Ubuntu 上安裝 Git 版本管理系統，並方便使用 Git 之資源。
 
 
 使用環境
@@ -30,6 +30,7 @@ git config --global user.name "git.user" &&
 git config --global user.email git@email.com
 ```
 欲修改時，請再次輸入以上帳號或 Email 之指令，即可覆蓋原設定。  
+
 DONE.
 <br>
 <br>
