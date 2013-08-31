@@ -18,10 +18,10 @@ sudo aptitude install libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-
 接著，輸入以下指令，以將 Git 下載並安裝：  
 (Git 的版本可至 [Git 官網](https://code.google.com/p/git-core/downloads/list) 查看與選擇，本文以 1.8.3.4 做為示範)
 ```bash
-wget https://git-core.googlecode.com/files/git-1.8.3.4.tar.gz && 
-tar -zxf git-1.8.3.4.tar.gz && mv git-1.8.3.4 git && cd git && 
+wget https://git-core.googlecode.com/files/git-1.8.4.tar.gz && 
+tar -zxf git-1.8.4.tar.gz && mv git-1.8.4 git && cd git && 
 make prefix=/usr/local all && sudo make prefix=/usr/local install && 
-cd && rm -rf git git-1.8.3.4.tar.gz
+cd && rm -rf git git-1.8.4.tar.gz
 ```
 最後，請設定帳號名稱及 Email：  
 (本文以 git.user 做為帳號、git＠email.com 做為 Email)
