@@ -16,7 +16,7 @@ Git 1.8.3.4
 sudo aptitude install libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev build-essential
 ```
 接著，輸入以下指令，以將 Git 下載並安裝：  
-(Git 的版本可至 [Git 官網](https://www.digitalocean.com/community/articles/how-to-install-git-on-ubuntu-12-04) 查看與選擇，本文以 1.8.3.4 做為示範)
+(Git 的版本可至 [Git 官網](https://code.google.com/p/git-core/downloads/list) 查看與選擇，本文以 1.8.3.4 做為示範)
 ```bash
 wget https://git-core.googlecode.com/files/git-1.8.3.4.tar.gz && 
 tar -zxf git-1.8.3.4.tar.gz && mv git-1.8.3.4 git && cd git && 
